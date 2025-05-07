@@ -19,7 +19,7 @@ public class EnemyAI : MonoBehaviour
     public int wetLevelMax = 100;
     public int currentWetLevel = 0;
 
-    public WetBarScript wetBar;
+    //public wetbarscript wetbar;
 
     public PlayerHealthScript playerHealth;
 
@@ -48,7 +48,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
-          wetBar.SetWetValue(currentWetLevel);
+          //wetBar.SetWetValue(currentWetLevel);
     }
 
     private void Update()
@@ -121,7 +121,7 @@ public class EnemyAI : MonoBehaviour
     {
         currentWetLevel += enemyWetLevel;
 
-        wetBar.SetWetValue(currentWetLevel);
+        //wetBar.SetWetValue(currentWetLevel);
     }
 }
    
