@@ -15,7 +15,7 @@ public class PlayerHealthScript : MonoBehaviour
     public List<GameObject> enemies;
     public int totalEnemies;
     //References
-    //public WetBarScript wetBar;
+    public WetBarScript wetBar;
     public GameObject questTrigger5;
     public GameObject questWindow;
     public GameObject WetBarUI;
@@ -28,8 +28,9 @@ public class PlayerHealthScript : MonoBehaviour
     void Start()
     {
         playerWetLevel = 0;
-        throwing.enabled = false;
-        WetBarUI.SetActive(false);
+        wetBar.SetWetValue(playerWetLevel);
+        
+        WetBarUI.SetActive(true);
     }
 
     // Update is called once per frame
@@ -37,7 +38,7 @@ public class PlayerHealthScript : MonoBehaviour
     {
         playerWetLevel += wetlevel;
 
-        //wetBar.SetWetValue(playerWetLevel);
+        wetBar.SetWetValue(playerWetLevel);
     }
     void Update()
     {

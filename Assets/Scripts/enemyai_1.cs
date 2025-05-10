@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using static Hertzole.GoldPlayer.Example.MovingPlatform;
 
 
@@ -19,7 +20,8 @@ public class EnemyAI : MonoBehaviour
     public int wetLevelMax = 100;
     public int currentWetLevel = 0;
 
-    //public wetbarscript wetbar;
+    public WetBarScript wetBar;
+    public Slider wetBarSlider;
 
     public PlayerHealthScript playerHealth;
 
@@ -48,7 +50,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
-          //wetBar.SetWetValue(currentWetLevel);
+        wetBar.SetWetValue(currentWetLevel);
     }
 
     private void Update()
@@ -79,6 +81,7 @@ public class EnemyAI : MonoBehaviour
         }
         if (playerInSightRange && !playerInThrowingRange) ChasePlayer();
         if (playerInSightRange && playerInThrowingRange) AttackPlayer();
+        wetBarSlider.value = currentWetLevel;
         if (currentWetLevel == wetLevelMax)
         {
             playerHealth.enemiesSoaked++;
@@ -121,7 +124,22 @@ public class EnemyAI : MonoBehaviour
     {
         currentWetLevel += enemyWetLevel;
 
-        //wetBar.SetWetValue(currentWetLevel);
+       
     }
+    private void OnDrawGizmos()
+    {
+        // Draw forward direction (blue)
+        Gizmos.color = Color.blue;
+        Vector3 forward = transform.forward * 10f;
+        Gizmos.DrawLine(transform.position + Vector3.up * 1.5f, transform.position + Vector3.up * 1.5f + forward);
+
+        // Draw throwing point direction if set
+        if (throwingPoint != null)
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawLine(throwingPoint.position, throwingPoint.position + throwingPoint.forward * 2f);
+        }
+    }
+
 }
-   
+
