@@ -13,7 +13,6 @@ public class ChairInteract : MonoBehaviour, IInteractable
     public GameObject player;
     public GameObject playerCamera;
     public GameObject cinematicCamera;
-    public Transform cinematicCameraLocation;
     public GoldPlayerController controller;
     public Throwing throwing;
     public SleepControl sleepControl;
@@ -28,7 +27,7 @@ public class ChairInteract : MonoBehaviour, IInteractable
         isSitting = true;
         playerCamera.SetActive(false);
         cinematicCamera.SetActive(true);
-        cinematicCameraLocation.LookAt(lookLocation.position);
+        cinematicCamera.transform.LookAt(lookLocation);
     }
     public void EnableMovement()
     {

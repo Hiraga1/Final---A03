@@ -10,7 +10,7 @@ public class Cutscene2TriggerScript : MonoBehaviour
     public GameObject cinematic;
     public GameObject cinematicTarget;
     public GameObject player;
-    public bool isCutscene1Trigger = true; // Set this in Inspector
+    public bool isCutscene1Trigger = false; // Set this in Inspector
     private bool hasTriggered = false;
 
     private void OnTriggerEnter(Collider other)
@@ -29,6 +29,7 @@ public class Cutscene2TriggerScript : MonoBehaviour
             }
             else
             {
+                Debug.Log("Triggered");
                 cutscene.cutscene2 = true;
                 cutscene.cutscene2Trigger.SetActive(false);
 

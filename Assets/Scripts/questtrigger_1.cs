@@ -12,7 +12,7 @@ public class QuestTrigger : MonoBehaviour
     public GameObject questWindow;
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI descriptionText;
-    public GameObject prevQuestTrigger;
+    
     public GameObject prevQuestGoal;
 
     public void OpenQuestWindow()
@@ -23,7 +23,7 @@ public class QuestTrigger : MonoBehaviour
         descriptionText.text = quest.questDescription;
         questGoal.SetActive(true);
         prevQuestGoal.SetActive(false);
-        prevQuestTrigger.SetActive(false);
+        
     }
 
     public void OnTriggerEnter(Collider other)

@@ -29,7 +29,7 @@ public class Dialogue
 public class DialogsTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
-    
+    public SleepControl sleep;
 
     public void TriggerDialogue()
     {
@@ -41,7 +41,7 @@ public class DialogsTrigger : MonoBehaviour
         if (collider.tag == "Player")
         {
             TriggerDialogue();
-
+            sleep.playerReadyToSleep = false;
         }
     }
 }

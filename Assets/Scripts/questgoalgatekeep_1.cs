@@ -5,7 +5,7 @@ using UnityEngine;
 public class QuestGoalGateKeep : MonoBehaviour
 {
     public GameObject questWindow;
-    public QuestTrigger quest;
+    public GameObject questTrigger6;
     public PlayerHealthScript itemManager;
     public DialogsTrigger dialog;
 
@@ -16,6 +16,8 @@ public class QuestGoalGateKeep : MonoBehaviour
         if (itemManager.phoneChecked && itemManager.studentCard && itemManager.jacket)
         {
             this.gameObject.SetActive(false);
+            questTrigger6.SetActive(true);
+                questWindow.SetActive(false);
         }
         else
         {

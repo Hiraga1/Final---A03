@@ -12,10 +12,14 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueArea;
     public SleepControl sleep;
     public GameObject dialogBox;
+    public ChairInteract chair;
     public float typingSpeed = 0.2f;
 
     private Queue<DialogueLine> lines;
     public bool isDialogue;
+
+    public GameObject sleepObj;
+    public GameObject sleepObjDestination;
 
     public AudioSource musicSource;
 
@@ -58,6 +62,14 @@ public class DialogueManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && isDialogue)
         {
             DisplayNextDialogueLine();
+        }
+
+    }
+    private void FixedUpdate()
+    {
+        if (!isDialogue && chair.isSitting)
+        {
+            sleepObj.transform.position = sleepObjDestination.transform.position;   
         }
     }
 

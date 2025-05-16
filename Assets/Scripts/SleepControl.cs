@@ -21,10 +21,13 @@ public class SleepControl : MonoBehaviour
     public GameObject jacket;
     public GameObject maleObject;
     public GameObject femaleObject;
+    public GameObject stool;
     public Transform[] malePositions;
     public Transform[] femalePositions;
-    public GameObject dialogTrigger4;
-    public Transform triggerLocation;
+    public Transform[] stoolPositions;
+    public GameObject dialogTrigger1;
+    public GameObject dialogTrigger2;
+    public GameObject teacherParent;
     public Transform phoneLocation;
     public Transform studentCardLocation;
     public Transform jacketLocation;
@@ -32,13 +35,13 @@ public class SleepControl : MonoBehaviour
     
     //Bools
     public bool playerInPosition;
-    bool playerReadyToSleep;
+    public bool playerReadyToSleep;
     bool hasSpawned;
    
     private void OnTriggerEnter(Collider other)
     {
         playerInPosition = true;
-        
+        Debug.Log("ready");
     }
     public void SleepStart()
     {
@@ -48,12 +51,13 @@ public class SleepControl : MonoBehaviour
     {
         if (playerReadyToSleep && playerInPosition && manager.isDialogue == false)
         {
+            Debug.Log("Sleep");
             Sleep();
         }
     }
     private void Sleep()
     {
-        transition.SetTrigger("Sleeping");
+        transition.SetTrigger("Sleep");
         if (!hasSpawned)
         {
             foreach (Transform m in malePositions)
@@ -64,6 +68,10 @@ public class SleepControl : MonoBehaviour
             {
                 Instantiate(femaleObject, f.position, f.rotation);
             }
+            foreach (Transform s in stoolPositions)
+            {
+                Instantiate(stool, s.position, s.rotation);
+            }
             hasSpawned = true;
         }
         playerReadyToSleep = false;
@@ -71,11 +79,12 @@ public class SleepControl : MonoBehaviour
     }
     private void WakeUp()
     {
-        dialogTrigger4.transform.position = triggerLocation.position;
-        transition.SetTrigger("Waking UP");
+        dialogTrigger1.SetActive(true);
+        dialogTrigger2.SetActive(true);
+        transition.SetTrigger("WakeUp");
         chair.SitUp();
         questTrigger4.SetActive(true);
-        NPC_Control.SetActive(false);
+        teacherParent.SetActive(true);
         Invoke(nameof(DestroyChair), 1f);
         Instantiate(phone, phoneLocation.position, phoneLocation.rotation);
         Instantiate(studentCard, studentCardLocation.position, studentCardLocation.rotation);

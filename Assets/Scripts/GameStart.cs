@@ -11,7 +11,7 @@ public class GameStart : MonoBehaviour
     public GoldPlayerController controller;
     public Throwing throwing;
     //GameObjects
-    public GameObject questGoal4;
+    
     public GameObject tutorialScreen;
     public GameObject player;
     //Enabler
@@ -40,7 +40,7 @@ public class GameStart : MonoBehaviour
     public Transform ED4transform;
     private void OnTriggerEnter(Collider other)
     {
-        questGoal4.SetActive(false);
+        
 
         WakingUpPlayer();
 
@@ -58,8 +58,8 @@ public class GameStart : MonoBehaviour
 
     private void WakingUpPlayer()
     {
-        Debug.Log("WakingUp");
-        transition.SetTrigger("Waking UP");
+        
+        transition.SetTrigger("WakeUp");
         controller.enabled = true;
         throwing.enabled = true;
         Invoke(nameof(Tutorial), 1f);

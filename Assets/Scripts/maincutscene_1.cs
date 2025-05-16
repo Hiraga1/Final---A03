@@ -79,7 +79,7 @@ public class MainCutscene : MonoBehaviour, IInteractable
 
     private void TriggerMainEvent()
     {
-        transition.SetTrigger("Sleeping");
+        transition.SetTrigger("Sleep");
         cutsceneFinished = true;
 
         // Kill any leftover dialogue
@@ -127,6 +127,7 @@ public class MainCutscene : MonoBehaviour, IInteractable
 
     private void Cutscene2()
     {
+        
         if (cutsceneFinished) return;
         cutscene2Trigger.transform.position = player.transform.position;
     }

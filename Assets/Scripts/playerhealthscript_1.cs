@@ -16,7 +16,9 @@ public class PlayerHealthScript : MonoBehaviour
     public int totalEnemies;
     //References
     public WetBarScript wetBar;
-    public GameObject questTrigger5;
+    public GameObject checker;
+    public GameObject Dialogs;
+    public GameObject questTrigger6;
     public GameObject questWindow;
     public GameObject WetBarUI;
     public Throwing throwing;
@@ -31,6 +33,7 @@ public class PlayerHealthScript : MonoBehaviour
         wetBar.SetWetValue(playerWetLevel);
         
         WetBarUI.SetActive(true);
+        
     }
 
     // Update is called once per frame
@@ -50,8 +53,8 @@ public class PlayerHealthScript : MonoBehaviour
 
         if (phoneChecked && studentCard && jacket)
         {
-            
-            questTrigger5.SetActive(true);
+            checker.SetActive(false);
+            questTrigger6.SetActive(true);
         }
 
         if (enemiesSoaked == enemies.Count)
@@ -59,6 +62,21 @@ public class PlayerHealthScript : MonoBehaviour
             apexStudent = true;
         }
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name=="Card(Clone)")
+        {
+            studentCard = true;
+            Debug.Log("Card");
+        }
+        if(other.gameObject.name == "Jacket(Clone)")
+        {
+            jacket = true;
+        }
+        if (other.gameObject.name == "Phone(Clone)")
+        {
+            phoneChecked = true;
+        }
+    }
 
 }
