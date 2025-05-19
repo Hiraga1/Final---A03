@@ -10,6 +10,7 @@ public class UIScript : MonoBehaviour
     public GameObject enemyParent;
     public GameObject bucketParent;
     public GameObject freeExploreParent;
+    public GameObject principle;
     public GoldPlayerController controller;
     public GameObject ED1_Canvas, ED2_Canvas, ED3_Canvas, ED4_Canvas, ED5_Canvas;
     public DialogueManager manager;
@@ -36,8 +37,10 @@ public class UIScript : MonoBehaviour
     public void FreeExploreStart()
     {
         freeExploreParent.SetActive(true);
+        principle.SetActive(false);
         player.transform.SetPositionAndRotation(freeExplore.position, Quaternion.identity);
         controller.enabled = true;
+        controller.Camera.ShouldLockCursor = true;
         Destroy(enemyParent);
         Destroy(bucketParent);
     }

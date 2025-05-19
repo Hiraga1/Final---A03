@@ -89,7 +89,7 @@ public class SleepControl : MonoBehaviour
         Instantiate(phone, phoneLocation.position, phoneLocation.rotation);
         Instantiate(studentCard, studentCardLocation.position, studentCardLocation.rotation);
         Instantiate(jacket, jacketLocation.position, jacketLocation.rotation);
-       
+        NPC_Control.SetActive(false);
         
     }
 

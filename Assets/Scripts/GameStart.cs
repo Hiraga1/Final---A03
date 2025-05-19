@@ -90,7 +90,7 @@ public class GameStart : MonoBehaviour
             throwing.enabled = false;
             ED1.SetActive(true);
             player.transform.position = ED1transform.position;
-            Cursor.lockState = CursorLockMode.None;
+            controller.Camera.ShouldLockCursor = false;
             timer.SetActive(false);
         }
         else
@@ -103,7 +103,7 @@ public class GameStart : MonoBehaviour
             throwing.enabled = false;
             ED2.SetActive(true);
             player.transform.position = ED2transform.position;
-            Cursor.lockState = CursorLockMode.None;
+            controller.Camera.ShouldLockCursor = false;
             timer.SetActive(false);
 
         }
@@ -114,7 +114,7 @@ public class GameStart : MonoBehaviour
             ED3.SetActive(true);
             player.transform.position = ED3transform.position;
             Debug.Log("Apex Student Ending");
-            Cursor.lockState = CursorLockMode.None;
+            controller.Camera.ShouldLockCursor = false;
             timer.SetActive(false);
         }
         else if (expelledScript.expelled)
@@ -124,7 +124,7 @@ public class GameStart : MonoBehaviour
             ED4.SetActive(true);
             player.transform.position = ED4transform.position;
             Debug.Log("Expelled Ending");
-            Cursor.lockState = CursorLockMode.None;
+            controller.Camera.ShouldLockCursor = false;
             timer.SetActive(false);
         }
 

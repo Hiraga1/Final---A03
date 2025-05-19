@@ -1501,6 +1501,86 @@ Transform:
   m_Children: []
   m_Father: {fileID: 195035507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &38757364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 38757365}
+  - component: {fileID: 38757367}
+  - component: {fileID: 38757366}
+  m_Layer: 0
+  m_Name: FreeExplore4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &38757365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38757364}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -76.64, y: 0, z: 39.78}
+  m_LocalScale: {x: 2, y: 1, z: 26}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 138393994}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &38757366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38757364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251e8e20c36919c44852025793b27647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: Narrator
+      line: 'Building A. The school''s first building and also the school''s pride
+        and joy. Honest opinion, this building is great but learning in here is quite
+        inconvenient. The chairs are quite small and its a 3 people per table so
+        spacing is an issue. During storms, this building is really dark and the
+        windows are loud too. Other than that, this building also has a room for
+        school records and the principle and vice principle room are here too. '
+      playMusic: 1
+      musicClip: {fileID: 0}
+      stopCurrentMusic: 1
+  sleep: {fileID: 352650586}
+--- !u!65 &38757367
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38757364}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 22.16219, y: 1, z: 1.2243435}
+  m_Center: {x: -10.5810995, y: 0, z: -0.059343737}
 --- !u!1 &41813622
 GameObject:
   m_ObjectHideFlags: 0
@@ -5068,6 +5148,44 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 195035507}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &138393993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 138393994}
+  m_Layer: 0
+  m_Name: FreeExploreParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &138393994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138393993}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -208.173, y: -2.219, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1305335922}
+  - {fileID: 1908614012}
+  - {fileID: 1603842304}
+  - {fileID: 38757365}
+  - {fileID: 2001305446}
+  - {fileID: 1126022427}
+  - {fileID: 1233289500}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &138924220
 GameObject:
@@ -12168,11 +12286,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6942ef402f7d34aa08f0e1742b971c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 164546335}
   freeExplore: {fileID: 0}
   enemyParent: {fileID: 0}
   bucketParent: {fileID: 0}
-  freeExploreParent: {fileID: 0}
+  freeExploreParent: {fileID: 138393993}
+  principle: {fileID: 2050831858}
   controller: {fileID: 0}
   ED1_Canvas: {fileID: 0}
   ED2_Canvas: {fileID: 0}
@@ -15922,7 +16041,8 @@ MonoBehaviour:
   freeExplore: {fileID: 651018743}
   enemyParent: {fileID: 1700644903}
   bucketParent: {fileID: 505707449}
-  freeExploreParent: {fileID: 0}
+  freeExploreParent: {fileID: 138393993}
+  principle: {fileID: 2050831858}
   controller: {fileID: 164546345}
   ED1_Canvas: {fileID: 345856310}
   ED2_Canvas: {fileID: 804560860}
@@ -32343,22 +32463,22 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1037272250}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 04de58ab73de19b498e47338adc84a26,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -204.47377
+      value: 0.085617065
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 04de58ab73de19b498e47338adc84a26,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7212772
+      value: -2.0312772
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 04de58ab73de19b498e47338adc84a26,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.035313
+      value: 2.2603798
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 04de58ab73de19b498e47338adc84a26,
         type: 3}
@@ -32368,7 +32488,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 04de58ab73de19b498e47338adc84a26,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 04de58ab73de19b498e47338adc84a26,
         type: 3}
@@ -32378,7 +32498,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 04de58ab73de19b498e47338adc84a26,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 04de58ab73de19b498e47338adc84a26,
         type: 3}
@@ -32399,6 +32519,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Talking (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 04de58ab73de19b498e47338adc84a26,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4968594392036086805, guid: 04de58ab73de19b498e47338adc84a26,
         type: 3}
@@ -37375,11 +37500,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6942ef402f7d34aa08f0e1742b971c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1452878527}
+  player: {fileID: 164546335}
   freeExplore: {fileID: 651018743}
   enemyParent: {fileID: 1700644903}
   bucketParent: {fileID: 505707449}
-  freeExploreParent: {fileID: 0}
+  freeExploreParent: {fileID: 138393993}
+  principle: {fileID: 2050831858}
   controller: {fileID: 164546345}
   ED1_Canvas: {fileID: 345856310}
   ED2_Canvas: {fileID: 804560860}
@@ -41743,18 +41869,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 164546335}
-  freeExplore: {fileID: 0}
-  enemyParent: {fileID: 0}
-  bucketParent: {fileID: 0}
-  freeExploreParent: {fileID: 0}
-  controller: {fileID: 0}
-  ED1_Canvas: {fileID: 0}
-  ED2_Canvas: {fileID: 0}
-  ED3_Canvas: {fileID: 0}
-  ED4_Canvas: {fileID: 0}
-  ED5_Canvas: {fileID: 0}
-  manager: {fileID: 0}
-  transition: {fileID: 0}
+  freeExplore: {fileID: 651018743}
+  enemyParent: {fileID: 1700644903}
+  bucketParent: {fileID: 505707449}
+  freeExploreParent: {fileID: 138393993}
+  principle: {fileID: 2050831858}
+  controller: {fileID: 164546345}
+  ED1_Canvas: {fileID: 345856310}
+  ED2_Canvas: {fileID: 804560860}
+  ED3_Canvas: {fileID: 266203592}
+  ED4_Canvas: {fileID: 1205343485}
+  ED5_Canvas: {fileID: 898013307}
+  manager: {fileID: 330293239}
+  transition: {fileID: 121250108}
 --- !u!114 &898013309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46781,22 +46908,22 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1037272250}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4fd2590334d33db40997401825921d88,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -204.68076
+      value: -0.12136841
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4fd2590334d33db40997401825921d88,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7212772
+      value: -2.0312772
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4fd2590334d33db40997401825921d88,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.837953
+      value: 0.06301975
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4fd2590334d33db40997401825921d88,
         type: 3}
@@ -46806,17 +46933,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4fd2590334d33db40997401825921d88,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4fd2590334d33db40997401825921d88,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4fd2590334d33db40997401825921d88,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4fd2590334d33db40997401825921d88,
         type: 3}
@@ -46837,6 +46964,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Talking (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4fd2590334d33db40997401825921d88,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 4fd2590334d33db40997401825921d88,
         type: 3}
@@ -47069,6 +47201,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 195035507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1032720287 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 04de58ab73de19b498e47338adc84a26,
+    type: 3}
+  m_PrefabInstance: {fileID: 697090676}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1033034394
 GameObject:
   m_ObjectHideFlags: 0
@@ -47167,6 +47305,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2143516113}
+  - {fileID: 1844026538}
+  - {fileID: 1032720287}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1039010548
@@ -50945,6 +51085,82 @@ Transform:
   m_Children: []
   m_Father: {fileID: 195035507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1126022426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1126022427}
+  - component: {fileID: 1126022429}
+  - component: {fileID: 1126022428}
+  m_Layer: 0
+  m_Name: FreeExplore6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1126022427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126022426}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -56.49, y: 0, z: -76.78}
+  m_LocalScale: {x: 2, y: 1, z: 15}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 138393994}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1126022428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126022426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251e8e20c36919c44852025793b27647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: Narrator
+      line: The student's parking lot. Everytime you went here, always check your
+        belonging in case you forget your ticket or else.
+      playMusic: 1
+      musicClip: {fileID: 0}
+      stopCurrentMusic: 1
+  sleep: {fileID: 352650586}
+--- !u!65 &1126022429
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126022426}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1.5632277}
+  m_Center: {x: 0, y: 0, z: -0.033606816}
 --- !u!1 &1126383955
 GameObject:
   m_ObjectHideFlags: 0
@@ -54180,7 +54396,8 @@ MonoBehaviour:
   freeExplore: {fileID: 0}
   enemyParent: {fileID: 0}
   bucketParent: {fileID: 0}
-  freeExploreParent: {fileID: 0}
+  freeExploreParent: {fileID: 138393993}
+  principle: {fileID: 2050831858}
   controller: {fileID: 0}
   ED1_Canvas: {fileID: 0}
   ED2_Canvas: {fileID: 0}
@@ -54938,6 +55155,83 @@ Transform:
   m_Children: []
   m_Father: {fileID: 195035507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1233289499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1233289500}
+  - component: {fileID: 1233289502}
+  - component: {fileID: 1233289501}
+  m_Layer: 0
+  m_Name: FreeExplore7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1233289500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233289499}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.76772463, z: 0, w: 0.64078}
+  m_LocalPosition: {x: -22.25, y: 0, z: -93.94}
+  m_LocalScale: {x: 2, y: 1, z: 15}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 138393994}
+  m_LocalEulerAnglesHint: {x: 0, y: 100.3, z: 0}
+--- !u!114 &1233289501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233289499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251e8e20c36919c44852025793b27647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: Narrator
+      line: 'A lot of the times during my first and second year I don''t understant
+        why our school has a chicken coop which is weird but they don''t smell that
+        bad to be honest. '
+      playMusic: 1
+      musicClip: {fileID: 0}
+      stopCurrentMusic: 1
+  sleep: {fileID: 352650586}
+--- !u!65 &1233289502
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233289499}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.021582, y: 1, z: 0.99999946}
+  m_Center: {x: -1.5107785, y: 0, z: -0.0000000023696758}
 --- !u!1 &1233736939
 GameObject:
   m_ObjectHideFlags: 0
@@ -57335,6 +57629,84 @@ Transform:
   m_Children: []
   m_Father: {fileID: 195035507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1305335921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1305335922}
+  - component: {fileID: 1305335924}
+  - component: {fileID: 1305335923}
+  m_Layer: 0
+  m_Name: FreeExplore1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1305335922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305335921}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 1, z: 70}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 138393994}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1305335923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305335921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251e8e20c36919c44852025793b27647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: Narrator
+      line: The C building. Honestly, I don't spend too much time in this building
+        eventhough it has a library. Personally, I don't go to libraries and the
+        few times I'm here is to learn computer scienes or play some games in the
+        school's computer room.
+      playMusic: 1
+      musicClip: {fileID: 0}
+      stopCurrentMusic: 1
+  sleep: {fileID: 352650586}
+--- !u!65 &1305335924
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305335921}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1305368339
 GameObject:
   m_ObjectHideFlags: 0
@@ -58231,12 +58603,27 @@ PrefabInstance:
     - target: {fileID: -2391837782760779790, guid: 06fea0ec59be52b44bbf9186783e5f41,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.81
+      value: 3.05
       objectReference: {fileID: 0}
     - target: {fileID: -2391837782760779790, guid: 06fea0ec59be52b44bbf9186783e5f41,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 10.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2391837782760779790, guid: 06fea0ec59be52b44bbf9186783e5f41,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -2391837782760779790, guid: 06fea0ec59be52b44bbf9186783e5f41,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -2391837782760779790, guid: 06fea0ec59be52b44bbf9186783e5f41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -2258909429528773002, guid: 06fea0ec59be52b44bbf9186783e5f41,
         type: 3}
@@ -74877,6 +75264,85 @@ Transform:
   m_Children: []
   m_Father: {fileID: 195035507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1603842303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1603842304}
+  - component: {fileID: 1603842306}
+  - component: {fileID: 1603842305}
+  m_Layer: 0
+  m_Name: FreeExplore3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1603842304
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603842303}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -47.33, y: 0, z: 67.13}
+  m_LocalScale: {x: 2, y: 1, z: 26}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 138393994}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1603842305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603842303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251e8e20c36919c44852025793b27647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: Narrator
+      line: The Teacher's building. The place where all the teachers go when they
+        prepare the slides, materials and such. This is also the last place you want
+        to be in for various reasons, from having a personal conversation regarding
+        your actions during class to your grades or sometime your class grade in
+        that subject.
+      playMusic: 1
+      musicClip: {fileID: 0}
+      stopCurrentMusic: 1
+  sleep: {fileID: 352650586}
+--- !u!65 &1603842306
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603842303}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1603984020
 GameObject:
   m_ObjectHideFlags: 0
@@ -80027,6 +80493,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MrsThanh
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e33c638fd9f24524cadb759db9002bcf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -364039609526300830, guid: e33c638fd9f24524cadb759db9002bcf, type: 3}
@@ -83551,6 +84022,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 195035507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1844026538 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4fd2590334d33db40997401825921d88,
+    type: 3}
+  m_PrefabInstance: {fileID: 1022159895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1845043023
 GameObject:
   m_ObjectHideFlags: 0
@@ -85814,6 +86291,83 @@ Transform:
   m_Children: []
   m_Father: {fileID: 195035507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1908614011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1908614012}
+  - component: {fileID: 1908614014}
+  - component: {fileID: 1908614013}
+  m_Layer: 0
+  m_Name: FreeExplore2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1908614012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908614011}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -33.97, y: 0, z: -36.93}
+  m_LocalScale: {x: 4, y: 1, z: 70}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 138393994}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1908614013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908614011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251e8e20c36919c44852025793b27647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: Narrator
+      line: 'The B building. The place most Viet Duc students will spend during their
+        3 years here. This place hold many memory of me. Other than that, This building
+        is has only one function: Classroom and that''s it. '
+      playMusic: 0
+      musicClip: {fileID: 0}
+      stopCurrentMusic: 0
+  sleep: {fileID: 352650586}
+--- !u!65 &1908614014
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908614011}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1.3975804}
+  m_Center: {x: 7.407764e-15, y: 0, z: -0.19878423}
 --- !u!1 &1908667875
 GameObject:
   m_ObjectHideFlags: 0
@@ -90063,6 +90617,84 @@ Transform:
   - {fileID: 1086242821}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2001305445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2001305446}
+  - component: {fileID: 2001305448}
+  - component: {fileID: 2001305447}
+  m_Layer: 0
+  m_Name: FreeExplore5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2001305446
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001305445}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.77422696, z: 0, w: 0.63290817}
+  m_LocalPosition: {x: -114.7, y: 0, z: -88}
+  m_LocalScale: {x: 4, y: 1, z: 70}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 138393994}
+  m_LocalEulerAnglesHint: {x: 0, y: 101.47, z: 0}
+--- !u!114 &2001305447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001305445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251e8e20c36919c44852025793b27647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    dialogueLines:
+    - character:
+        name: Narrator
+      line: 'The lab building or also called the chair building. For me, this building
+        is quite strange as I only enter it for the lab during my final years. The
+        lab time are fun though. One time my class made soap during chem but it got
+        thrown away but lower class during the evening. '
+      playMusic: 1
+      musicClip: {fileID: 0}
+      stopCurrentMusic: 1
+  sleep: {fileID: 352650586}
+--- !u!65 &2001305448
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001305445}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1.1432457}
+  m_Center: {x: -0.000007625383, y: 0, z: -0.07161438}
 --- !u!64 &2001563506
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -95660,8 +96292,6 @@ SceneRoots:
   - {fileID: 7872021636692274811}
   - {fileID: 1771740818436040587}
   - {fileID: 1484984194}
-  - {fileID: 1022159895}
-  - {fileID: 697090676}
   - {fileID: 1893202338}
   - {fileID: 505707450}
   - {fileID: 1700644904}
@@ -95688,8 +96318,8 @@ SceneRoots:
   - {fileID: 190957568}
   - {fileID: 196463504}
   - {fileID: 971970768}
-  - {fileID: 1205343486}
   - {fileID: 898013312}
+  - {fileID: 1205343486}
   - {fileID: 266203593}
   - {fileID: 804560861}
   - {fileID: 345856311}
@@ -95704,3 +96334,4 @@ SceneRoots:
   - {fileID: 517276030}
   - {fileID: 651018743}
   - {fileID: 751287803}
+  - {fileID: 138393994}
