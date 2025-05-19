@@ -15,6 +15,7 @@ public class UIScript : MonoBehaviour
     public GameObject ED1_Canvas, ED2_Canvas, ED3_Canvas, ED4_Canvas, ED5_Canvas;
     public DialogueManager manager;
     public Animator transition;
+    public GameObject clock, clock_manager;
     public void Play()
     {
         SceneManager.LoadScene("MainScene");
@@ -43,6 +44,8 @@ public class UIScript : MonoBehaviour
         controller.Camera.ShouldLockCursor = true;
         Destroy(enemyParent);
         Destroy(bucketParent);
+        clock.SetActive(true);
+        clock_manager.SetActive(true);
     }
     public void EDSceneDisable()
     {
