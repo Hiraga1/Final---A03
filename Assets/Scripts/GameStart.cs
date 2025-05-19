@@ -10,15 +10,17 @@ public class GameStart : MonoBehaviour
     //Scripts
     public GoldPlayerController controller;
     public Throwing throwing;
-    //GameObjects
     
+    //GameObjects
     public GameObject tutorialScreen;
     public GameObject player;
+
     //Enabler
     public GameObject enemy;
     public GameObject stockBuckets;
     public GameObject timer;
     public GameObject escape;
+    public GameObject playerUI;
 
     //Mics
     public Animator transition;
@@ -40,11 +42,14 @@ public class GameStart : MonoBehaviour
     public Transform ED4transform;
     private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
 
         WakingUpPlayer();
 
         Invoke(nameof(Enabler), 6f);
+        }
+
 
     }
 
@@ -58,12 +63,12 @@ public class GameStart : MonoBehaviour
 
     private void WakingUpPlayer()
     {
-        
+        Debug.Log("Start");
         transition.SetTrigger("WakeUp");
         controller.enabled = true;
         throwing.enabled = true;
         Invoke(nameof(Tutorial), 1f);
-
+        playerUI.SetActive(true);
     }
 
     public void Tutorial()
@@ -72,6 +77,7 @@ public class GameStart : MonoBehaviour
 
 
     }
+
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))

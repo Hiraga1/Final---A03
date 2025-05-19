@@ -25,10 +25,12 @@ public class EnemyAI : MonoBehaviour
 
     public PlayerHealthScript playerHealth;
 
+    public Animator animator;
+
     //Patrolling with waypoints
-    public List<GameObject> waypoints; //waypoints list
+    public Transform waypoints; //waypoints list
     public float speed = 2; //Speed of the cube
-    int index = 0;
+    int index;
 
    
 
@@ -63,21 +65,20 @@ public class EnemyAI : MonoBehaviour
         if (!playerInSightRange && !playerInThrowingRange) //Patrolling
 
         {
-            Vector3 destination = waypoints[index].transform.position;
-            Vector3 newpos = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime); //calculate and move towards new waypoints
-            transform.position = newpos; //set new position when going through way points
-
-            if (transform.position == destination)
+            
+            if(agent.remainingDistance <= 0.2f)
             {
-                index++; /*go to the next waypoint*/
+                index++;
+                
+                    if(index >= waypoints.childCount)
+                    {
+                        index = 0;
+                    }
 
+                    agent.SetDestination(waypoints.GetChild(index).position);
+                
             }
-            if (index == waypoints.Count) //if reach the end of the waypoint map
-            {
-                index = 0; //resets waypoint to 0
-                waypoints.Reverse(); //reverse the order of the waypoint
-
-            }
+            animator.SetTrigger("Walking");
         }
         if (playerInSightRange && !playerInThrowingRange) ChasePlayer();
         if (playerInSightRange && playerInThrowingRange) AttackPlayer();
@@ -95,26 +96,37 @@ public class EnemyAI : MonoBehaviour
 
     private void ChasePlayer()
     {
+       
         agent.SetDestination(player.position);
+        animator.SetTrigger("Walking");
     }
 
     private void AttackPlayer()
     {
-        //Enemy stays still when shooting 
+        // Enemy stops moving
         agent.SetDestination(transform.position);
 
-        transform.LookAt(player);
+        // Face the player (only rotate on Y axis)
+        Vector3 lookPos = player.position - transform.position;
+        lookPos.y = 0;
+        transform.rotation = Quaternion.LookRotation(lookPos);
 
         if (!alreadyThrew)
         {
-            Rigidbody rb = Instantiate(waterBalls, throwingPoint.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 5f, ForceMode.Impulse);
+            animator.SetTrigger("Throw"); // Start the animation
             alreadyThrew = true;
+
+            // Optionally delay the actual projectile throw slightly to match animation
+            Invoke(nameof(PerformThrow), 2.1f); // 0.5s delay can match animation timing
             Invoke(nameof(ResetThrow), throwingCdEnemy);
         }
     }
+    private void PerformThrow()
+    {
+        Rigidbody rb = Instantiate(waterBalls, throwingPoint.position, throwingPoint.rotation).GetComponent<Rigidbody>();
+        rb.AddForce(throwingPoint.forward * 32f, ForceMode.Impulse);
+    }
+
     private void ResetThrow()
     {
         alreadyThrew = false;

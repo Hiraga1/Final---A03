@@ -93,8 +93,13 @@ public class MainCutscene : MonoBehaviour, IInteractable
         cutscene2Trigger.transform.position = originalLocation.position;
 
         // Destroy any NPC clones if needed
-        GameObject[] allClones = GameObject.FindGameObjectsWithTag("NPC");
-        foreach (GameObject clone in allClones)
+        GameObject[] humanClones = GameObject.FindGameObjectsWithTag("NPC");
+        foreach (GameObject clone in humanClones)
+        {
+            Destroy(clone);
+        }
+        GameObject[] stoolClones = GameObject.FindGameObjectsWithTag("Stool");
+        foreach (GameObject clone in stoolClones)
         {
             Destroy(clone);
         }

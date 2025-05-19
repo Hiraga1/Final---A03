@@ -23,10 +23,11 @@ public class WaterBallExploding : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("EnemyHit");
+            
             EnemyAI enemy = collision.gameObject.GetComponent<EnemyAI>();
             if (enemy != null)
             {
+                Debug.Log("EnemyHit");
                 enemy.EnemyTakeDamage(25);
             }
 

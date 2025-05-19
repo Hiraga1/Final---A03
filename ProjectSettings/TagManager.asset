@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Selectable
   - NPC
+  - Stool
   layers:
   - Default
   - TransparentFX

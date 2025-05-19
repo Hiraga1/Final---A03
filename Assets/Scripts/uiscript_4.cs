@@ -7,7 +7,7 @@ public class UIScript : MonoBehaviour
 {
     public GameObject player;
     public Transform freeExplore;
-    public GameObject capsuleParent;
+    public GameObject enemyParent;
     public GameObject bucketParent;
     public GameObject freeExploreParent;
     public GoldPlayerController controller;
@@ -38,6 +38,8 @@ public class UIScript : MonoBehaviour
         freeExploreParent.SetActive(true);
         player.transform.SetPositionAndRotation(freeExplore.position, Quaternion.identity);
         controller.enabled = true;
+        Destroy(enemyParent);
+        Destroy(bucketParent);
     }
     public void EDSceneDisable()
     {
@@ -53,7 +55,7 @@ public class UIScript : MonoBehaviour
     }
     public void Transition()
     {
-        transition.SetTrigger("WakingUP");
+        transition.SetTrigger("WakeUp");
     }
     
 }
