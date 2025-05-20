@@ -16,13 +16,16 @@ public class UIScript : MonoBehaviour
     public DialogueManager manager;
     public Animator transition;
     public GameObject clock, clock_manager;
+    public GameObject creditsScreen;
+    public GameObject mainScreen;
     public void Play()
     {
         SceneManager.LoadScene("MainScene");
     }
     public void Credits()
     {
-        Debug.Log("MMB");
+        mainScreen.SetActive(false);
+        creditsScreen.SetActive(true);
     }
     public void Quit()
     {
@@ -62,6 +65,11 @@ public class UIScript : MonoBehaviour
     public void Transition()
     {
         transition.SetTrigger("WakeUp");
+    }
+    public void Back()
+    {
+        creditsScreen.SetActive(false);
+        mainScreen.SetActive(true);
     }
     
 }
