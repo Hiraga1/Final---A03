@@ -11,7 +11,7 @@ public class ItemInteractionCard : MonoBehaviour, IInteractable
     public void OnInteract()
     {
         dialogs.TriggerDialogue();
-        itemsManager.studentCard = true;
+        
         transform.position = playerTransform.position;
         Invoke(nameof(CardDisable), .1f);
     }

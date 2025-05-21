@@ -44,6 +44,8 @@ public class UIScript : MonoBehaviour
         freeExploreParent.SetActive(true);
         principle.SetActive(false);
         player.transform.position = freeExplore.position;
+        player.transform.position = freeExplore.position;
+        player.transform.position = freeExplore.position;
         controller.enabled = true;
         controller.Camera.ShouldLockCursor = true;
         Destroy(enemyParent);

@@ -16,9 +16,7 @@ public class SleepControl : MonoBehaviour
     
 
     //Variables
-    public GameObject phone;
-    public GameObject studentCard;
-    public GameObject jacket;
+   
     public GameObject maleObject;
     public GameObject femaleObject;
     public GameObject stool;
@@ -26,11 +24,9 @@ public class SleepControl : MonoBehaviour
     public Transform[] femalePositions;
     public Transform[] stoolPositions;
     public GameObject dialogTrigger1;
-    public GameObject dialogTrigger2;
+    
     public GameObject teacherParent;
-    public Transform phoneLocation;
-    public Transform studentCardLocation;
-    public Transform jacketLocation;
+    
     public GameObject NPC_Control;
     
     //Bools
@@ -80,15 +76,13 @@ public class SleepControl : MonoBehaviour
     private void WakeUp()
     {
         dialogTrigger1.SetActive(true);
-        dialogTrigger2.SetActive(true);
+        
         transition.SetTrigger("WakeUp");
         chair.SitUp();
         questTrigger4.SetActive(true);
         teacherParent.SetActive(true);
         Invoke(nameof(DestroyChair), 1f);
-        Instantiate(phone, phoneLocation.position, phoneLocation.rotation);
-        Instantiate(studentCard, studentCardLocation.position, studentCardLocation.rotation);
-        Instantiate(jacket, jacketLocation.position, jacketLocation.rotation);
+
         NPC_Control.SetActive(false);
         
     }

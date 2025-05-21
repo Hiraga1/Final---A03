@@ -110,6 +110,7 @@ public class MainCutscene : MonoBehaviour, IInteractable
 
         // Start scene change sequence
         Invoke(nameof(StopCutscene), 0.1f);
+        
     }
 
     private void StopCutscene()

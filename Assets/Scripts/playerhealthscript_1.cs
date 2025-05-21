@@ -8,16 +8,13 @@ public class PlayerHealthScript : MonoBehaviour
     //Variables
     public int playerWetLevel;
     public int playerMaxWetLevel = 100;
-    public bool phoneChecked;
-    public bool studentCard;
-    public bool jacket;
+    
     public int enemiesSoaked;
     public List<GameObject> enemies;
     public int totalEnemies;
     //References
     public WetBarScript wetBar;
-    public GameObject checker;
-    public GameObject Dialogs;
+    
     public GameObject questTrigger6;
     public GameObject questWindow;
     public GameObject WetBarUI;
@@ -51,32 +48,12 @@ public class PlayerHealthScript : MonoBehaviour
             unforgettableMemory = true;
         }
 
-        if (phoneChecked && studentCard && jacket)
-        {
-            checker.SetActive(false);
-            questTrigger6.SetActive(true);
-        }
+        
 
         if (enemiesSoaked == enemies.Count)
         {
             apexStudent = true;
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.name=="Card(Clone)")
-        {
-            studentCard = true;
-            Debug.Log("Card");
-        }
-        if(other.gameObject.name == "Jacket(Clone)")
-        {
-            jacket = true;
-        }
-        if (other.gameObject.name == "Phone(Clone)")
-        {
-            phoneChecked = true;
-        }
-    }
-
+    
 }

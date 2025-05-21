@@ -13,8 +13,7 @@ public class QuestGoalGateKeep : MonoBehaviour
     {
         if (CompareTag("Player"))
         {
-        if (itemManager.phoneChecked && itemManager.studentCard && itemManager.jacket)
-        {
+        
             this.gameObject.SetActive(false);
             questTrigger6.SetActive(true);
                 questWindow.SetActive(false);
@@ -26,4 +25,4 @@ public class QuestGoalGateKeep : MonoBehaviour
 
         }
     }
-}
+

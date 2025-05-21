@@ -14,6 +14,7 @@ public class GameStart : MonoBehaviour
     //GameObjects
     public GameObject tutorialScreen;
     public GameObject player;
+    public GameObject maincutscene;
 
     //Enabler
     public GameObject enemy;
@@ -49,7 +50,7 @@ public class GameStart : MonoBehaviour
 
         Invoke(nameof(Enabler), 6f);
         }
-
+        maincutscene.transform.position = ED1transform.position;
 
     }
 
@@ -92,7 +93,7 @@ public class GameStart : MonoBehaviour
             player.transform.position = ED1transform.position;
             controller.Camera.ShouldLockCursor = false;
             timer.SetActive(false);
-            Destroy(this);
+            Destroy(this.gameObject);
         }
         else
 
@@ -106,7 +107,7 @@ public class GameStart : MonoBehaviour
             player.transform.position = ED2transform.position;
             controller.Camera.ShouldLockCursor = false;
             timer.SetActive(false);
-            Destroy(this);
+            Destroy(this.gameObject);
         }
         else if (healthScript.apexStudent)
         {
@@ -117,7 +118,7 @@ public class GameStart : MonoBehaviour
             Debug.Log("Apex Student Ending");
             controller.Camera.ShouldLockCursor = false;
             timer.SetActive(false);
-            Destroy(this);
+            Destroy(this.gameObject);
         }
         else if (expelledScript.expelled)
         {
@@ -128,7 +129,7 @@ public class GameStart : MonoBehaviour
             Debug.Log("Expelled Ending");
             controller.Camera.ShouldLockCursor = false;
             timer.SetActive(false);
-            Destroy(this);
+            Destroy(this.gameObject);
         }
 
     }

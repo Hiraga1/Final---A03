@@ -12,6 +12,7 @@ public class BasketBall : MonoBehaviour, IInteractable
     public GameObject reset;
     public float throwForce;
     private Rigidbody rb_BasketBall;
+    [SerializeField]
     private bool pickedUp = false;
     public void OnInteract()
     {
@@ -36,7 +37,7 @@ public class BasketBall : MonoBehaviour, IInteractable
     {
         if (pickedUp)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 Drop();
             }
