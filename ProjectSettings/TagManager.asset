@@ -10,6 +10,7 @@ TagManager:
   - Selectable
   - NPC
   - Stool
+  - NPC End
   layers:
   - Default
   - TransparentFX

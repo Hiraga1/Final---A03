@@ -92,6 +92,7 @@ public class GameStart : MonoBehaviour
             player.transform.position = ED1transform.position;
             controller.Camera.ShouldLockCursor = false;
             timer.SetActive(false);
+            Destroy(this);
         }
         else
 
@@ -105,7 +106,7 @@ public class GameStart : MonoBehaviour
             player.transform.position = ED2transform.position;
             controller.Camera.ShouldLockCursor = false;
             timer.SetActive(false);
-
+            Destroy(this);
         }
         else if (healthScript.apexStudent)
         {
@@ -116,6 +117,7 @@ public class GameStart : MonoBehaviour
             Debug.Log("Apex Student Ending");
             controller.Camera.ShouldLockCursor = false;
             timer.SetActive(false);
+            Destroy(this);
         }
         else if (expelledScript.expelled)
         {
@@ -126,6 +128,7 @@ public class GameStart : MonoBehaviour
             Debug.Log("Expelled Ending");
             controller.Camera.ShouldLockCursor = false;
             timer.SetActive(false);
+            Destroy(this);
         }
 
     }

@@ -16,6 +16,7 @@ public class UIScript : MonoBehaviour
     public DialogueManager manager;
     public Animator transition;
     public GameObject clock, clock_manager;
+    public GameObject wetBar, waterBall;
     public GameObject creditsScreen;
     public GameObject mainScreen;
     public void Play()
@@ -33,7 +34,7 @@ public class UIScript : MonoBehaviour
     }
     public void FreeExplore()
     {
-        
+        Transition();
         EDSceneDisable();
         FreeExploreStart();
         DialogsDisable();
@@ -42,13 +43,15 @@ public class UIScript : MonoBehaviour
     {
         freeExploreParent.SetActive(true);
         principle.SetActive(false);
-        player.transform.SetPositionAndRotation(freeExplore.position, Quaternion.identity);
+        player.transform.position = freeExplore.position;
         controller.enabled = true;
         controller.Camera.ShouldLockCursor = true;
         Destroy(enemyParent);
         Destroy(bucketParent);
         clock.SetActive(true);
         clock_manager.SetActive(true);
+        wetBar.SetActive(false);
+        waterBall.SetActive(false);
     }
     public void EDSceneDisable()
     {
